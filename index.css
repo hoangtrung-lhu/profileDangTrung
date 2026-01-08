@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.navbar nav a {
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    padding: 120px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+}
+
+.hero-content h1 {
+    font-size: 48px;
+}
+
+.hero-content span {
+    color: #0f172a;
+}
+
+.hero-content p {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #0f172a;
+    color: #22d3ee;
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.outline {
+    border: 2px solid #0f172a;
+    color: #0f172a;
+}
+
+.outline:hover {
+    background: #0f172a;
+    color: #22d3ee;
+}
+
+/* AVATAR */
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+.avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* SECTION */
+.section {
+    padding: 100px 80px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.desc {
+    max-width: 800px;
+    margin: auto;
+    opacity: 0.9;
+}
+
+/* ABOUT */
+.about-cards {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* SERVICES */
+.dark {
+    background: #020617;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service {
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    padding: 35px;
+    border-radius: 25px;
+    color: #020617;
+}
+
+/* PROJECTS */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* CONTACT */
+.gradient {
+    background: linear-gradient(135deg, #22d3ee, #6366f1);
+    color: #020617;
+}
+
+.gradient a {
+    color: #020617;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    background: #020617;
+    padding: 20px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-cards,
+    .service-list,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+/* FIRE CURSOR EFFECT */
+.fire {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff, #ffae00, #ff4500);
+    transform: translate(-50%, -50%);
+    animation: fireEffect 0.6s ease-out forwards;
+    z-index: 99999;
+    filter: blur(0.5px);
+}
+
+@keyframes fireEffect {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -80%) scale(2.5);
+    }
+}
